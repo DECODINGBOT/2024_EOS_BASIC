@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EOS ToDoList',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        fontFamily: 'Pretendard',
         useMaterial3: true,
       ),
       home: const MyHomePage(),
@@ -24,58 +25,71 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(backgroundColor: Colors.lightGreen,
-          title: Text('EOS ToDoList'),
-          leading: Icon(Icons.check_box_outlined),
-        ),
-        body: Container(
-          height: 200,
-          color: Colors.lightGreen.withOpacity(0.3),
-          padding: EdgeInsets.all(25),
-          child: Row(
-            children: [
-              Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      width: 10,
-                      color: Colors.grey
-                  ),
-                ),
-              child: Center(
-                child: Icon(
-                  Icons.person,
-                  size: 100,
-                  color: Colors.grey,
-                ),
-              ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('EOS'),
-                  Text(
-                    '김현수',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text('HANYANG TECH 24 CSE'),
-                ],
-              )
-            ],
+    //MediaQueryData deviceData = MediaQuery.of(context);
+    //Size screenSize = deviceData.size;
 
-          )
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFFA4C639).withOpacity(0.1),
+          title: Text('EOS ToDoList'),
+          leading: Image.asset('assets/images/eos_logo.png'),
         ),
-        bottomNavigationBar: BottomAppBar(child: Text('Hello EOS')),
+        body: Column(
+          children: [
+            Container(
+                height: 200,
+                //color: Colors.lightGreen.withOpacity(0.3),
+                padding: EdgeInsets.all(25),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 140,
+                      height: 140,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                            width: 10,
+                            color: Colors.grey
+                        ),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Center(
+                        child: Image.asset('assets/images/eos_logo.png'),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 35,
+                    ),
+                    Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '김현수',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Text('HANYANG TECH 24 CSE'),
+                          ],
+                        )
+                    ),
+                  ],
+                )
+            ),
+            Container(
+              height: 400,
+              //height: screenSize.height,
+              color: Color(0xFFA4C639).withOpacity(0.1),
+            )
+          ],
+        ),
+        //bottomNavigationBar: BottomAppBar(child: Text('Hello EOS')),
     );
   }
 }
