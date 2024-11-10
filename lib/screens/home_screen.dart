@@ -12,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List toDoLists = [];
-  bool isClicked = false;
 
   @override
   void initState() {
