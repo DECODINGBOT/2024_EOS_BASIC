@@ -108,7 +108,6 @@ class _SettingScreenState extends State<SettingScreen> {
                 )
             ),
           ),
-
           TextButton(
             onPressed: (){
               if(_nameController.text.isNotEmpty){
@@ -147,6 +146,15 @@ class _SettingScreenState extends State<SettingScreen> {
           ),
         ),
         actions: [
+          TextButton(onPressed: () {
+            Navigator.of(context).pop();
+          },
+            child: Text('취소',
+                style: TextStyle(
+                  color: Colors.black,
+                )
+            ),
+          ),
           TextButton(
               onPressed: () {
                 if(_bioController.text.isNotEmpty) {
